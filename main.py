@@ -22,9 +22,6 @@ left_frame.place(x=2, y=54)
 right_frame = Frame(window, width=198, height=260, bg=color2, pady=0, padx=3, relief='flat')
 right_frame.place(x=454, y=2)
 
-up_right_frame = Frame(window, width=198, height=50, bg=color2, pady=0, padx=3, relief='flat')
-up_right_frame.place(x=454, y=2)
-
 #window style
 style = ttk.Style(window)
 style.theme_use("clam")
@@ -33,14 +30,29 @@ style.theme_use("clam")
 l_app_name = Label(up_frame, text='Calculadora de Unidade de Medidas', height=1, padx=0, relief='flat', anchor='center', font=('Ivy 15 bold'), bg=color2, fg=color3)
 l_app_name.place(x=50, y=10)
 
-l_unity_choose = Label(up_right_frame, text='Massa', height=1, padx=0, relief='flat', anchor='center', font=('Ivy 15 bold'), bg=color2, fg=color1)
-l_unity_choose.place(x=60, y=10)
+l_unity_choose = Label(right_frame, text='Massa', width=16, height=2, padx=0, relief='groove', anchor='center', font=('Ivy 15 bold'), bg=color2, fg=color1)
+l_unity_choose.place(x=0, y=0)
+
+l_de = Label(right_frame, text='De', height=1, padx=0, relief='groove', anchor='center', font=('Ivy 10 bold'), bg=color2, fg=color1)
+l_de.place(x=7, y=70)
+
+c_de = ttk.Combobox(right_frame, width=5, justify=('center'), font=('Ivy 8 bold'))
+c_de.place(x=31, y=70)
+
+l_para = Label(right_frame, text='Para', height=1, padx=0, relief='groove', anchor='center', font=('Ivy 10 bold'), bg=color2, fg=color1)
+l_para.place(x=98, y=70)
+
+c_para = ttk.Combobox(right_frame, width=5, justify=('center'), font=('Ivy 8 bold'))
+c_para.place(x=135, y=70)
+
+#funcionalitys
+
 
 #buttons
 img_0 = Image.open('images/massa.png')
 img_0 = img_0.resize((40,40), Image.ANTIALIAS)
 img_0 = ImageTk.PhotoImage(img_0)
-b_0 = Button(left_frame, text=' Massa', image=img_0, compound=LEFT, width=130, height=50, relief='flat', overrelief='solid', font=('Ivy 11 bold'), bg = color3, fg=color1)
+b_0 = Button(left_frame, text='  Massa', image=img_0, compound=LEFT, width=130, height=50, relief='flat', overrelief='solid', font=('Ivy 11 bold'), bg = color3, fg=color1)
 b_0.grid(row = 0, column=0, sticky=NSEW, pady=5, padx=5)
 
 img_1 = Image.open('images/tempo.png')
